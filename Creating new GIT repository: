@@ -1,10 +1,11 @@
 Creating new GIT repository:
 1. Login and click on top right corner item to create your repository.
 2. Give Repository name and add some details.
-3. If files are already exisitng in local got to direcorty.
+3. If files are already existing in local got to directory.
 4. cd <Projet file path>
 5. Create .git file in respective folder using: git init 
 6. git checkout -b origin master  -->"First branch should be master"
-7. git commit -m "first commit"   -->"Commit in local branch with comment as first commit"
-8. git remote add origin https://github.com/navinpd/QRCode.git
-9. git push -u origin master      -->"Pushes code to origin master branch"
+7. git add .
+8. git commit -m "first commit"   -->"Commit in local branch with comment as first commit"
+9. git remote add origin https://github.com/navinpd/QRCode.git
+10. git push -u origin master      -->"Pushes code to origin master branch"
