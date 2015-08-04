@@ -1,0 +1,124 @@
+#How to operate
+
+#Run
+adb shell getevent | python  hex_to_dec.py
+
+#It will generate the touch event inputs to be given from bash to android device
+#copy the contents to touchAndroid.txt or any shell script
+
+#make touchAndroid executable
+chmod +x touchAndroid.txt
+
+#execute touchAdndroid
+./touchAndroid.txt
+
+
+
+capture text:
+
+/dev/input/event1: 0003 0039 00000376
+/dev/input/event1: 0003 0035 000002c8
+/dev/input/event1: 0003 0036 00000667
+/dev/input/event1: 0003 003a 0000002d
+/dev/input/event1: 0003 0030 00000004
+/dev/input/event1: 0000 0000 00000000
+/dev/input/event1: 0003 0039 ffffffff
+/dev/input/event1: 0000 0000 00000000
+
+#click right
+adb shell sendevent /dev/input/event1 3 57 886
+adb shell sendevent /dev/input/event1 3 53 712
+adb shell sendevent /dev/input/event1 3 54 1550
+adb shell sendevent /dev/input/event1 3 58 45
+adb shell sendevent /dev/input/event1 3 48 4
+adb shell sendevent /dev/input/event1 0 0 0
+adb shell sendevent /dev/input/event1 3 57 4294967295
+adb shell sendevent /dev/input/event1 0 0 0
+
+sleep 1
+
+adb shell sendevent /dev/input/event1 3 57 886
+adb shell sendevent /dev/input/event1 3 53 712
+adb shell sendevent /dev/input/event1 3 54 1550
+adb shell sendevent /dev/input/event1 3 58 45
+adb shell sendevent /dev/input/event1 3 48 4
+adb shell sendevent /dev/input/event1 0 0 0
+adb shell sendevent /dev/input/event1 3 57 4294967295
+adb shell sendevent /dev/input/event1 0 0 0
+
+sleep 1
+
+adb shell getevent -pl
+
+sleep 1
+#press the last person
+adb shell sendevent /dev/input/event1 3 57 169
+adb shell sendevent /dev/input/event1 3 53 535
+adb shell sendevent /dev/input/event1 3 54 1331
+adb shell sendevent /dev/input/event1 3 58 48
+adb shell sendevent /dev/input/event1 3 48 4
+adb shell sendevent /dev/input/event1 0 0 0
+adb shell sendevent /dev/input/event1 3 57 4294967295
+adb shell sendevent /dev/input/event1 0 0 0
+
+
+sleep 1
+
+#long press the text view
+adb shell sendevent /dev/input/event1 3 57 92
+adb shell sendevent /dev/input/event1 3 53 145
+adb shell sendevent /dev/input/event1 3 54 1708
+adb shell sendevent /dev/input/event1 3 58 46
+adb shell sendevent /dev/input/event1 0 0 0
+adb shell sendevent /dev/input/event1 3 57 4294967295
+adb shell sendevent /dev/input/event1 0 0 0
+
+sleep 1
+
+#Paste
+adb shell sendevent /dev/input/event1 3 57 123
+adb shell sendevent /dev/input/event1 3 53 106
+adb shell sendevent /dev/input/event1 3 54 813
+adb shell sendevent /dev/input/event1 3 58 44
+adb shell sendevent /dev/input/event1 3 48 3
+adb shell sendevent /dev/input/event1 0 0 0
+adb shell sendevent /dev/input/event1 3 57 4294967295
+adb shell sendevent /dev/input/event1 0 0 0
+
+#Send the message
+adb shell sendevent /dev/input/event1 3 57 124
+adb shell sendevent /dev/input/event1 3 53 1021
+adb shell sendevent /dev/input/event1 3 54 922
+adb shell sendevent /dev/input/event1 3 58 46
+adb shell sendevent /dev/input/event1 3 48 4
+adb shell sendevent /dev/input/event1 0 0 0
+adb shell sendevent /dev/input/event1 3 57 4294967295
+adb shell sendevent /dev/input/event1 0 0 0
+
+
+
+sleep 1
+
+#press back to exit message
+adb shell sendevent /dev/input/event1 3 57 153
+adb shell sendevent /dev/input/event1 3 53 123
+adb shell sendevent /dev/input/event1 3 54 125
+adb shell sendevent /dev/input/event1 3 58 45
+adb shell sendevent /dev/input/event1 3 48 4
+adb shell sendevent /dev/input/event1 0 0 0
+adb shell sendevent /dev/input/event1 3 57 4294967295
+adb shell sendevent /dev/input/event1 0 0 0
+
+
+sleep 2
+
+captured src
+#!/bin/sh
+adb shell sendevent /dev/input/event1 3 57 886
+adb shell sendevent /dev/input/event1 3 53 712
+adb shell sendevent /dev/input/event1 3 54 1639
+adb shell sendevent /dev/input/event1 3 58 45
+adb shell sendevent /dev/input/event1 3 48 4
+adb shell sendevent /dev/input/event1 0 0 0
+adb shell sendevent /dev/input/event1 3 57 4294967295
+adb shell sendevent /dev/input/event1 0 0 0
